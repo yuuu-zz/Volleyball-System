@@ -1,0 +1,55 @@
+{
+  "team.players": {
+    "transaction": true,
+    "partition-key": [
+      "player_id"
+    ],
+    "columns": {
+      "player_id": "INT",
+      "player_name": "TEXT",
+      "team_id": "INT",
+      "grade": "INT",
+      "position": "TEXT",
+      "status": "INT"
+    }
+  },
+  "team.teams": {
+    "transaction": true,
+    "partition-key": [
+      "team_id"
+    ],
+    "columns": {
+      "team_id": "INT",
+      "team_name": "TEXT"
+    }
+  },
+  "match.matches": {
+    "transaction": true,
+    "partition-key": [
+      "match_id"
+    ],
+    "clustering-key": [
+      "date"
+    ],
+    "columns": {
+      "match_id": "INT",
+      "date": "TEXT",
+      "nickname": "TEXT",
+      "team1_id": "INT",
+      "team2_id": "INT",
+      "winner_id": "INT"
+    }
+  },
+  "match.sets": {
+    "transaction": true,
+    "partition-key": [
+      "match_id"
+    ],
+    "columns": {
+      "match_id": "INT",
+      "set_cnt": "INT",
+      "team1_score": "INT",
+      "team2_score": "INT"
+    }
+  }
+}
